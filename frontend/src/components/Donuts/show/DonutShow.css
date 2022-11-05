@@ -1,0 +1,51 @@
+.donut-show {
+    margin-top: 5%;
+}
+
+.donut-show-container {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    margin-left: 10%;
+}
+
+.words-and-button {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    justify-content: space-evenly;
+    margin-right: 5%;
+}
+
+.big-title {
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 15px;
+    /* color: #02455e; */
+
+}
+
+.donut-image-container {
+    width: 50%;
+}
+
+.donut-image {
+    width: 100%;
+    height: auto;
+}
+
+.add-to-cart {
+    margin: 15%;
+    border-radius: 30px;
+    border: none;
+    background-color: #006990;
+    padding: 15px;
+    color: #A3F3FF;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.add-to-cart:hover {
+    cursor: pointer;
+}   
