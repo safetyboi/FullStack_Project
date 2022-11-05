@@ -15,7 +15,7 @@ export const receiveCartItem = cart_item => {
   };
   
   export const receiveCartItems = cart_items => {
-    
+    debugger
     return {
       type: RECEIVE_CART_ITEMS,
       cart_items

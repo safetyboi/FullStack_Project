@@ -34,6 +34,7 @@ class Api::CartItemsController < ApplicationController
     end
 
     def index
+        debugger
         @cart_items = CartItem.all
         render :index
     end
