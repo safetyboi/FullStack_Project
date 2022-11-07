@@ -10,7 +10,7 @@ export const CartItemIndex = () => {
 
     useEffect(() => {
         dispatch(CartItemActions.fetchAllCartItems())
-    }, [cartItems]); 
+    }, [dispatch]); //do we really need to re-render all cart items 
 
     return cartItems ? (
         <>
@@ -18,9 +18,11 @@ export const CartItemIndex = () => {
             <h2 className="cart-header"></h2>
             <ul className="cart-ul">
                 {cartItems.map(cartItem => (
-                    <li className="cart-index-item">
-                        <CartItem id={cartItem.id}/>
+                    
+                    <li key={cartItem.id} className="cart-index-item">
+                        <CartItem item={cartItem} id={cartItem.id}/>
                     </li>
+                    
                 ))}
             </ul>
         </div>

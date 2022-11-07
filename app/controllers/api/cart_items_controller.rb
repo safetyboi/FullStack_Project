@@ -1,6 +1,7 @@
 class Api::CartItemsController < ApplicationController
 
     def create
+        # debugger
         @cart_item = CartItem.find_by(donut_id: params[:donut_id])
         if @cart_item 
             @cart_item[:quantity] += 1
@@ -23,10 +24,10 @@ class Api::CartItemsController < ApplicationController
 
         if @cart_item[:quantity] == 0
             @cart_item.destroy
-            render :index
+            render :show
 
-        elsif @cart_item.update
-            render :index
+        elsif @cart_item.update(cart_item_params)
+            render :show
         else 
             #render 'api/errors'
         end
@@ -34,7 +35,7 @@ class Api::CartItemsController < ApplicationController
     end
 
     def index
-        debugger
+        # debugger
         @cart_items = CartItem.all
         render :index
     end

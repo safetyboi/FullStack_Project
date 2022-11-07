@@ -7,6 +7,7 @@ class Api::DonutsController < ApplicationController
 
     def show
         @donut = Donut.find_by(id: params[:id])
+        @reviews = @donut.reviews
         render :show
     end
 

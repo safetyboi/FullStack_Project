@@ -13,7 +13,7 @@ function App() {
      
      
      <Navigation />
-     {/* <CartItemIndex /> */}
+     <CartItemIndex />
      <Switch>
       <Route exact path="/">
         <HomePage />

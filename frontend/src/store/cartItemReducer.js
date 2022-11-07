@@ -15,7 +15,7 @@ export const receiveCartItem = cart_item => {
   };
   
   export const receiveCartItems = cart_items => {
-    debugger
+    // debugger
     return {
       type: RECEIVE_CART_ITEMS,
       cart_items
@@ -52,7 +52,7 @@ export const receiveCartItem = cart_item => {
   }
 
 export const postCartItem = (donut) => async dispatch => { //I think this one may actually take in a donut???
-    // debugger
+    debugger
     // console.log(donut);
     let res = await csrfFetch('/api/cart_items', {
       method: 'POST',
@@ -72,7 +72,7 @@ export const postCartItem = (donut) => async dispatch => { //I think this one ma
 }
 
 export const updateCartItem = (item) => async dispatch => {
-    let res = await csrfFetch(`/api/cart_items/${item.donut_id}`, {
+    let res = await csrfFetch(`/api/cart_items/${item.id}`, {
         method: 'PATCH',
         body: JSON.stringify(item),
         headers: {
@@ -82,8 +82,9 @@ export const updateCartItem = (item) => async dispatch => {
     })
 
     if (res.ok) {
+      debugger
         let data = await res.json();
-        dispatch(receiveCartItem(data));
+        dispatch(receiveCartItem(data.cartItem));
         return data;
     } 
 }
@@ -105,7 +106,9 @@ const CartItemReducer = (state = {}, action) => {
         case RECEIVE_CART_ITEMS:
             return { ...nextState, ...action.cart_items };
         case RECEIVE_CART_ITEM:
+          debugger
         nextState[action.cart_item.id] = action.cart_item;
+        return nextState;
         default: 
         return nextState;
     }

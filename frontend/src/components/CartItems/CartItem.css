@@ -1,0 +1,54 @@
+.img-name-buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.img-name-buttons:hover {
+    background-color: beige;
+}
+
+.plus-minus-button {
+    width: 5%;
+    height: 5%;
+    padding: 10px;
+    background-color: #006990;
+    border-radius: 50%;
+    color: #A3F3FF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin: 1%;
+}
+
+.plus-minus-button:hover {
+    cursor: pointer;
+}
+
+.remove-button {
+    padding: 1.5%;
+    /* padding-left: 15px;
+    padding-right: 15px; */
+    background-color: #006990;
+    /* border-radius: 20%; */
+    color: #A3F3FF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    margin: 1%;
+    margin-left: 1.5%;
+}
+
+.remove-button:hover {
+    cursor: pointer;
+}
+
+.cart-item-image {
+    width: 7%;
+    height: auto;
+
+}
+
+.cart-item-name {
+    width: 30%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    padding: 3%;
+}
