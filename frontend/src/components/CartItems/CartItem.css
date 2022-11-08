@@ -7,6 +7,13 @@
     background-color: beige;
 }
 
+.button-container {
+    margin: .5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
 .plus-minus-button {
     width: 45px;
     height: 45px;
@@ -42,10 +49,16 @@
     background-color: #01435b;
 }
 
+.image-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
 .cart-item-image {
     width: 55px;
     height: 55px;
-    padding-top: 5px;
+    /* padding-top: 5px; */
 
 }
 
@@ -56,10 +69,16 @@
     padding: 3%;
 }
 
-.quantity-container {
+.quantity-container-horizontal {
     display: flex;
     width: 10%;
     justify-content: center;
+}
+
+.quantity-container-vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .cart-item-quantity {

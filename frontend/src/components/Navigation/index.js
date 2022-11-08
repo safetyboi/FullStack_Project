@@ -11,7 +11,7 @@ import cart from './cart.png';
 import cart_hover from './cart-hover.png'
 
 
-export const Navigation = () => {
+export const Navigation = ({toggle}) => {
 
   const sessionUser = useSelector(state => state.session.user);
   const dispatch = useDispatch();
@@ -34,8 +34,10 @@ export const Navigation = () => {
     );
   }
 
+
   return (
     <>
+    
     <div className="wrapping-top-bar">
       <div></div>
       <div className="center-home-button">
@@ -49,7 +51,7 @@ export const Navigation = () => {
           {sessionLinks}
         </li>
         <li>
-        <img src={cart} className="cart-icon" onMouseOver={e => e.currentTarget.src = cart_hover} onMouseOut={e => e.currentTarget.src = cart}></img>
+        <img src={cart} className="cart-icon" onMouseOver={e => e.currentTarget.src = cart_hover} onMouseOut={e => e.currentTarget.src = cart} onClick={toggle}></img>
         </li>
       </ul>
       </div>

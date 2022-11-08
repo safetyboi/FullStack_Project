@@ -39,13 +39,21 @@ export const CartItem = ({id, item}) => {
 
     return item ? (
         <div className="img-name-buttons">
-            <img className="cart-item-image" src={OrxataGlaze}></img>
-            <div className="cart-item-name">{item.donutName}</div>
-            <div className="quantity-container">
-                <div className="cart-item-quantity">{item.quantity}</div>
+            <div className="image-container">
+                <img className="cart-item-image" src={OrxataGlaze}></img>
             </div>
+            <div className="cart-item-name">{item.donutName}</div>
+            <div className="quantity-container-horizontal">
+                <div className="quantity-container-vertical">
+                <div className="cart-item-quantity">{item.quantity}</div>
+                </div>
+            </div>
+            <div className="button-container">
             <button className="plus-minus-button" onClick={handleIncrement}>+</button>
+            </div>
+            <div className="button-container">
             <button className="plus-minus-button" onClick={handleDecrement}>-</button>
+            </div>
             <button className="remove-button" onClick={handleRemove}>Remove</button>
         </div>
     ) : null;

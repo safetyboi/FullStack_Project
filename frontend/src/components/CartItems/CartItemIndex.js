@@ -2,8 +2,9 @@ import { useEffect } from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import * as CartItemActions from '../../store/cartItemReducer'
 import { CartItem } from './CartItem'
+import "./CartItemIndex.css"
 
-export const CartItemIndex = () => {
+export const CartItemIndex = ({show}) => {
     const cartItems = useSelector(state => Object.values(state.cartItems));
     const dispatch = useDispatch();
 
@@ -11,10 +12,15 @@ export const CartItemIndex = () => {
         dispatch(CartItemActions.fetchAllCartItems())
     }, [dispatch]); //do we really need to re-render all cart items 
 
+    let drawerClasses = 'side-drawer';
+    if(show) {
+       drawerClasses = 'side-drawer open';
+    }
+
     return cartItems ? (
         <>
-        <div className="cart-index-container">
-            <h2 className="cart-header"></h2>
+        <div className={drawerClasses}>
+            <h2 className="cart-header">Your Cart...</h2>
             <ul className="cart-ul">
                 {cartItems.map(cartItem => (
                     
