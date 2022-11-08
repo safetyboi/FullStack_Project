@@ -4,7 +4,6 @@ import * as CartItemActions from '../../store/cartItemReducer'
 import { CartItem } from './CartItem'
 
 export const CartItemIndex = () => {
-
     const cartItems = useSelector(state => Object.values(state.cartItems));
     const dispatch = useDispatch();
 

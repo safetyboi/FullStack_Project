@@ -2,12 +2,11 @@ import { csrfFetch } from "./csrf";
 
 const RECEIVE_CART_ITEM = 'RECEIVE_CART_ITEM';
 const RECEIVE_CART_ITEMS = 'RECEIVE_CART_ITEMS';
-const REMOVE_CART_ITEM = 'REMOVE_CART_ITEMRECEIVE_CART_ITEM';
+const REMOVE_CART_ITEM = 'REMOVE_CART_ITEM';
 
 //POJOS:
 
 export const receiveCartItem = cart_item => {
-    debugger
     return {
       type: RECEIVE_CART_ITEM,
       cart_item
@@ -66,7 +65,7 @@ export const postCartItem = (donut) => async dispatch => { //I think this one ma
     
   if (res.ok) {
     let data = await res.json();
-        dispatch(receiveCartItem(data));
+        dispatch(receiveCartItem(data.cartItem));
         return data;
   }
 }
@@ -82,7 +81,6 @@ export const updateCartItem = (item) => async dispatch => {
     })
 
     if (res.ok) {
-      debugger
         let data = await res.json();
         dispatch(receiveCartItem(data.cartItem));
         return data;
@@ -90,10 +88,12 @@ export const updateCartItem = (item) => async dispatch => {
 }
 
 export const deleteCartItem = (id) => async dispatch => {
+  debugger
     let res = csrfFetch(`api/cart_items/${id}`, {
         method: 'DELETE'
     });
 
+    dispatch(removeCartItem(id))
 }
 
 //REDUCER:
@@ -109,6 +109,10 @@ const CartItemReducer = (state = {}, action) => {
           debugger
         nextState[action.cart_item.id] = action.cart_item;
         return nextState;
+        case REMOVE_CART_ITEM:
+          debugger
+          delete nextState[action.cart_item_Id]; //what does TeaTime have access to, and why?
+          return nextState;
         default: 
         return nextState;
     }

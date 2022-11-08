@@ -13,14 +13,15 @@ export const DonutShow = () => {
     const donut = useSelector(state => state.donuts[id]); 
     const dispatch = useDispatch();
     const cart_item = {donut_id: donut.id, donut_name: donut.name, donut_price: donut.price, quantity: 1} 
-
+    
     useEffect(() => {
         dispatch(fetchDonut(id))
       },[donut])
 
       const handleSubmit = (e) => {
+        debugger
         e.preventDefault();
-        console.log(cart_item)
+        // console.log(cart_item)
         debugger
         const res = dispatch(postCartItem(cart_item)) //what are we passing this function? 
         //if donut is in cart => key into cart_item.quantity, += 1, dispatch different thunk (update),
@@ -28,6 +29,7 @@ export const DonutShow = () => {
 
     //   if (!donut) return null;
       return donut ? (
+        
         <>
         <div className="donut-show">
             <div className="donut-show-container">
