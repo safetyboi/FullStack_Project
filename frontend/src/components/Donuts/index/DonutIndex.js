@@ -18,14 +18,15 @@ export const DonutIndex = (props) => {
     return(
       <>
         <div className='donut-index-container'>
-          {/* <h2 className="index-header">Our Donuts</h2> */}
         
           {donuts.map(donut => (
             <>
             <div className='index-item-container'>
-            <img className="index-item-image" src={placeholderImage}></img>
             <div className="index-item">
-            <NavLink to={`/donuts/${donut.id}`} style={{ textDecoration: 'none' }}>{donut.name}</NavLink>
+            <NavLink to={`/donuts/${donut.id}`} style={{ textDecoration: 'none' }}>
+            <img className="index-item-image" src={placeholderImage}></img>
+            {/* <div className="index-item-name">{donut.name}</div> */}
+            </NavLink>
             </div>
             </div>
             </>
