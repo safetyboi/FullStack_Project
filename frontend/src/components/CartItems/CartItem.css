@@ -1,10 +1,12 @@
 .img-name-buttons {
     display: flex;
     flex-direction: row;
+    margin: 7px;
 }
 
 .img-name-buttons:hover {
     background-color: beige;
+    border-radius: 10px;
 }
 
 .button-container {
@@ -31,12 +33,22 @@
     background-color: #01435b;
 }
 
+.remove-container {
+    display: flex;
+    width: auto;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 5px;
+}
+
 .remove-button {
-    padding: 1.5%;
-    /* padding-left: 15px;
-    padding-right: 15px; */
+    height: 45px;
+    width: auto;
+    /* padding: 1.5%; */
+    padding-left: 10px;
+    padding-right: 12px; 
     background-color: #006990;
-    /* border-radius: 20%; */
+    border-radius: 25px;
     color: #A3F3FF;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;

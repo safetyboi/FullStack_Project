@@ -11,25 +11,11 @@ import { useState } from "react";
 
 function App() {
 
-  // state = { drawerOpen: false };
-
   const [drawerOpen, setDrawerOpen] = useState(false);
-
-  // const drawerToggleClickHandler = () => {
-  //   this.setState({
-  //     drawerOpen: !this.state.drawerOpen
-  //   })
-  // }
 
   const drawerToggleClickHandler = () => {
     setDrawerOpen(!drawerOpen)
   }
-
-  // const backdropClickHandler = () => {
-  //   this.setState({
-  //     drawerOpen: false
-  //   })
-  // }
 
   const backdropClickHandler = () => {
     setDrawerOpen(false);

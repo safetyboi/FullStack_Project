@@ -54,7 +54,9 @@ export const CartItem = ({id, item}) => {
             <div className="button-container">
             <button className="plus-minus-button" onClick={handleDecrement}>-</button>
             </div>
+            <div className='remove-container'>
             <button className="remove-button" onClick={handleRemove}>Remove</button>
+            </div>
         </div>
     ) : null;
 }

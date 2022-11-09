@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchAllDonuts } from '../../../store/donutReducer'; 
 import { NavLink } from 'react-router-dom';
 import { DonutShow } from '../show/DonutShow';
+import './DonutIndex.css'
+import placeholderImage from '../show/orxata-glaze-removebg-preview.png'
 
 
 export const DonutIndex = (props) => {
@@ -16,17 +18,20 @@ export const DonutIndex = (props) => {
     return(
       <>
         <div className='donut-index-container'>
-          <h2 className="index-header">Our Donuts</h2>
-          <ul className='donuts-ul'>
+          {/* <h2 className="index-header">Our Donuts</h2> */}
+        
           {donuts.map(donut => (
             <>
-            <li className="index-item">
-            <NavLink to={`/donuts/${donut.id}`} >{donut.name}</NavLink>
-            </li>
+            <div className='index-item-container'>
+            <img className="index-item-image" src={placeholderImage}></img>
+            <div className="index-item">
+            <NavLink to={`/donuts/${donut.id}`} style={{ textDecoration: 'none' }}>{donut.name}</NavLink>
+            </div>
+            </div>
             </>
           ))}
-          </ul>
-        </div>
+          </div>
+        
         
       </>
     )

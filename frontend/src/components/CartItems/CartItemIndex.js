@@ -17,6 +17,14 @@ export const CartItemIndex = ({show}) => {
        drawerClasses = 'side-drawer open';
     }
 
+    const subTotal = () => {
+        let sum = 0;
+        cartItems.forEach(item=>{
+            sum += (item.quantity * item.donutPrice)
+        })
+        return sum;
+    }
+
     return cartItems ? (
         <>
         <div className={drawerClasses}>
@@ -30,6 +38,10 @@ export const CartItemIndex = ({show}) => {
                     
                 ))}
             </ul>
+            <div className="sub-total-container">
+            <div className="sub-total">Subtotal: ${subTotal()}.00</div>
+            </div>
+            <button className="check-out">Check out</button>
         </div>
         </>
     ) : null;
