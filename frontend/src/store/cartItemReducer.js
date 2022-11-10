@@ -7,6 +7,7 @@ const REMOVE_CART_ITEM = 'REMOVE_CART_ITEM';
 //POJOS:
 
 export const receiveCartItem = cart_item => {
+  debugger
     return {
       type: RECEIVE_CART_ITEM,
       cart_item
@@ -51,7 +52,7 @@ export const receiveCartItem = cart_item => {
   }
 
 export const postCartItem = (donut) => async dispatch => { //I think this one may actually take in a donut???
-    // debugger
+    debugger
     // console.log(donut);
     let res = await csrfFetch('/api/cart_items', {
       method: 'POST',
@@ -64,7 +65,9 @@ export const postCartItem = (donut) => async dispatch => { //I think this one ma
     console.log(res)
     
   if (res.ok) {
+    debugger
     let data = await res.json();
+    debugger
         dispatch(receiveCartItem(data.cartItem));
         return data;
   }
@@ -106,11 +109,11 @@ const CartItemReducer = (state = {}, action) => {
         case RECEIVE_CART_ITEMS:
             return { ...nextState, ...action.cart_items };
         case RECEIVE_CART_ITEM:
-          // debugger
+          debugger
         nextState[action.cart_item.id] = action.cart_item;
         return nextState;
         case REMOVE_CART_ITEM:
-          // debugger
+          debugger
           delete nextState[action.cart_item_Id]; //what does TeaTime have access to, and why?
           return nextState;
         default: 

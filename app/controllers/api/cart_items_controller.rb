@@ -41,7 +41,7 @@ class Api::CartItemsController < ApplicationController
     end
 
     def destroy
-        debugger
+        # debugger
         @cart_item = CartItem.find_by(donut_id: params[:donut_id]);
         @cart_item.destroy
         render :index #I know we can't render index but it doesn't seem like we should be rendering show for a cart item we just deleted either

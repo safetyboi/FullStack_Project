@@ -27,8 +27,14 @@ export const CartItem = ({id, item}) => {
         e.preventDefault();
         const newItem = Object.assign({}, item);
         newItem.quantity -= 1;
-        const res = dispatch(CartItemActions.updateCartItem(newItem));
-        if (res?.errors) setErrors(res.errors); 
+        if (newItem.quantity === 0) {
+            const res = dispatch(CartItemActions.deleteCartItem(newItem.id))
+            if (res?.errors) setErrors(res.errors); 
+        } else {
+            const res = dispatch(CartItemActions.updateCartItem(newItem));
+            if (res?.errors) setErrors(res.errors); 
+        }
+        
     }
 
     const handleRemove = (e) => {
