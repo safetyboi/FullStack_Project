@@ -45,8 +45,8 @@ export const DonutShow = ({toggle}) => {
             </div>
             <div className="donut-image-container">
             <div>
-                <img className="donut-image" src={OrxataGlaze}></img>
-                {/* <img className="donut-image" src={donut.imageURL[1]}></img> */}
+                {/* <img className="donut-image" src={OrxataGlaze}></img> */}
+                <img className="donut-image" src={donut.imageURL[1]}></img>
             </div>
             </div>
             </div> 

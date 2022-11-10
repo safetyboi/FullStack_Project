@@ -19,7 +19,7 @@ export const LoginFormPage = (props)=> {
         e.preventDefault();
         // setUsername('demo-lition');
         // setPassword('password');
-        const res = dispatch(sessionActions.loginUser({ username: 'demo-lition', password: 'password' }));
+        const res = dispatch(sessionActions.loginUser({ username: 'Demo-lition', password: 'password' }));
         if (res?.errors) setErrors(res.errors);
     }
 

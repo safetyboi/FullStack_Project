@@ -5,10 +5,12 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-
-ApplicationRecord.transaction do 
+require 'open-uri'
+# ApplicationRecord.transaction do 
   puts "Destroying tables..."
+  CartItem.destroy_all
   User.destroy_all
+  Donut.destroy_all
 
   puts "Resetting primary keys..."
   ApplicationRecord.connection.reset_pk_sequence!('users')
@@ -210,4 +212,4 @@ ApplicationRecord.transaction do
   donut23.photos.attach([{io: URI.open('https://foobar-donuts-dev.s3.us-west-2.amazonaws.com/passion-fruit-cake-v-removebg-preview.png'), filename:'23-1'},{io: URI.open('https://foobar-donuts-dev.s3.us-west-2.amazonaws.com/passion-fruit-cake-v.webp'), filename:'23-2'}])
 
   puts "Done!"
-end
+# end

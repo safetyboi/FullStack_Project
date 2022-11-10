@@ -32,7 +32,7 @@ class User < ApplicationRecord
   validates :password, length: { in: 6..255 }, allow_nil: true
 
 
-  def self.find_by_credentials(username, email, password)
+  def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     
     user&.authenticate(password) ? user : nil

@@ -25,8 +25,8 @@ export const DonutIndex = (props) => {
             <div className='index-item-container'>
             <div className="index-item">
             <NavLink to={`/donuts/${donut.id}`}>
-            <img className="index-item-image" src={placeholderImage}></img>
-            {/* <img className="index-item-image" src={donut.imageURL[0]}></img> */}
+            {/* <img className="index-item-image" src={placeholderImage}></img> */}
+            <img className="index-item-image" src={donut.imageURL[0]}></img>
             {/* <div className="index-item-name">{donut.name}</div> */}
             </NavLink>
             </div>
