@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom';
 import { postCartItem } from "../../../store/cartItemReducer";
 import OrxataGlaze from "./Orxata-Glaze.webp"
 
-export const DonutShow = () => {
+export const DonutShow = ({toggle}) => {
     // console.log(props);
     const {id} = useParams();
     const donut = useSelector(state => state.donuts[id]); 
@@ -19,12 +19,13 @@ export const DonutShow = () => {
       },[donut])
 
       const handleSubmit = (e) => {
-        debugger
+        // debugger
         e.preventDefault();
         // console.log(cart_item)
-        debugger
+        // debugger
         const res = dispatch(postCartItem(cart_item)) //what are we passing this function? 
         //if donut is in cart => key into cart_item.quantity, += 1, dispatch different thunk (update),
+        toggle()
       }
 
     //   if (!donut) return null;
@@ -45,6 +46,7 @@ export const DonutShow = () => {
             <div className="donut-image-container">
             <div>
                 <img className="donut-image" src={OrxataGlaze}></img>
+                {/* <img className="donut-image" src={donut.imageURL[1]}></img> */}
             </div>
             </div>
             </div> 

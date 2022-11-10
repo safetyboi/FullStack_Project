@@ -31,27 +31,32 @@ export const SignupFormPage = ()=> {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <>
+        <div className="flex-wrapper">
+        <form className="signup-form" onSubmit={handleSubmit}>
              <ul>
                 {errors.map(error => <li key={error}>{error}</li>)}
             </ul>
-            <label> Username
-                <input type="text" value={username} onChange={(e)=> setUsername(e.target.value)}/>
+            <label className="input-label"> Username
+                <input type="text" value={username} onChange={(e)=> setUsername(e.target.value)} className="input-field"/>
             </label>
 
-            <label> Email
-                <input type="text" value={email} onChange={(e)=> setEmail(e.target.value)}/>
+            <label className="input-label"> Email
+                <input type="text" value={email} onChange={(e)=> setEmail(e.target.value)} className="input-field"/>
             </label>
 
-            <label> Password
-                <input type="password" value={password} onChange={(e)=> setPassword(e.target.value)}/>
+            <label className="input-label"> Password
+                <input type="password" value={password} onChange={(e)=> setPassword(e.target.value)} className="input-field"/>
             </label>
 
-            <label> Confirm Password
-                <input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}/>
+            <label className="input-label"> Confirm Password
+                <input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} className="input-field"/>
             </label>
-
-            <input type="submit" value="Sign up!" />
+            <div className="signup-container">
+            <input type="submit" value="Sign up!" className="signup-button" />
+            </div>
         </form>
+        </div>
+        </>
     );
 }

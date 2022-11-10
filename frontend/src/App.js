@@ -46,7 +46,7 @@ function App() {
         <DonutIndex />
       </Route>
       <Route exact path="/donuts/:id" >
-        <DonutShow />
+        <DonutShow toggle={drawerToggleClickHandler} />
       </Route>
      </Switch>
     </>

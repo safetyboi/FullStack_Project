@@ -51,7 +51,7 @@ export const receiveCartItem = cart_item => {
   }
 
 export const postCartItem = (donut) => async dispatch => { //I think this one may actually take in a donut???
-    debugger
+    // debugger
     // console.log(donut);
     let res = await csrfFetch('/api/cart_items', {
       method: 'POST',
@@ -88,7 +88,7 @@ export const updateCartItem = (item) => async dispatch => {
 }
 
 export const deleteCartItem = (id) => async dispatch => {
-  debugger
+  // debugger
     let res = csrfFetch(`api/cart_items/${id}`, {
         method: 'DELETE'
     });
@@ -106,11 +106,11 @@ const CartItemReducer = (state = {}, action) => {
         case RECEIVE_CART_ITEMS:
             return { ...nextState, ...action.cart_items };
         case RECEIVE_CART_ITEM:
-          debugger
+          // debugger
         nextState[action.cart_item.id] = action.cart_item;
         return nextState;
         case REMOVE_CART_ITEM:
-          debugger
+          // debugger
           delete nextState[action.cart_item_Id]; //what does TeaTime have access to, and why?
           return nextState;
         default: 

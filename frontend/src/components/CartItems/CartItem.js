@@ -41,6 +41,7 @@ export const CartItem = ({id, item}) => {
         <div className="img-name-buttons">
             <div className="image-container">
                 <img className="cart-item-image" src={OrxataGlaze}></img>
+                {/* <img className="cart-item-image" src={item.donut.imageURL[0]}></img> */}
             </div>
             <div className="cart-item-name">{item.donutName}</div>
             <div className="quantity-container-horizontal">

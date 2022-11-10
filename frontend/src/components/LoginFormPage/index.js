@@ -15,6 +15,14 @@ export const LoginFormPage = (props)=> {
     const [errors, setErrors] = useState([]);
     const sessionUser = useSelector(state => state.session.user);
 
+    const handleDemo = (e) => {
+        e.preventDefault();
+        // setUsername('demo-lition');
+        // setPassword('password');
+        const res = dispatch(sessionActions.loginUser({ username: 'demo-lition', password: 'password' }));
+        if (res?.errors) setErrors(res.errors);
+    }
+
     if (sessionUser) return <Redirect to="/" />;
 
     const handleSubmit = (e)=> {
@@ -43,6 +51,7 @@ export const LoginFormPage = (props)=> {
             </label>
             <br/>
             <div className="login-signup-container">
+            <button className="login-signup-button" onClick={handleDemo}>Demo-User</button>
             <input type="submit" value="Login" className="login-signup-button"/>
             <NavLink to="/signup" className="login-signup-button" style={{ textDecoration: 'none' }}>Sign Up</NavLink>
             </div>

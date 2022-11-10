@@ -17,14 +17,16 @@ export const DonutIndex = (props) => {
     }, [dispatch]);
     return(
       <>
+        <div className="search-by-type"></div>
         <div className='donut-index-container'>
         
           {donuts.map(donut => (
             <>
             <div className='index-item-container'>
             <div className="index-item">
-            <NavLink to={`/donuts/${donut.id}`} style={{ textDecoration: 'none' }}>
+            <NavLink to={`/donuts/${donut.id}`}>
             <img className="index-item-image" src={placeholderImage}></img>
+            {/* <img className="index-item-image" src={donut.imageURL[0]}></img> */}
             {/* <div className="index-item-name">{donut.name}</div> */}
             </NavLink>
             </div>
