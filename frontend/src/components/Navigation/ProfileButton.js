@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react"
 import { useDispatch } from "react-redux";
 import * as sessionActions from '../../store/session';
+import './ProfileButton.css'
 
 
 export const ProfileButton = ({user}) => {
@@ -38,9 +39,9 @@ export const ProfileButton = ({user}) => {
       {showMenu && (
         <ul className="profile-dropdown">
           <li>{user.username}</li>
-          <li>{user.email}</li>
+          {/* <li>{user.email}</li> */}
           <li>
-            <button onClick={logout}>Log Out</button>
+            <button className="logout-button" onClick={logout}>Log Out</button>
           </li>
         </ul>
       )}

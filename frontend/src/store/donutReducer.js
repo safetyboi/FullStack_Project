@@ -8,6 +8,7 @@ const REMOVE_DONUT = 'REMOVE_DONUT';
 //POJOs:
 
 export const receiveDonut = donut => {
+  debugger
     return {
       type: RECEIVE_DONUT,
       donut
@@ -43,10 +44,10 @@ export const receiveDonut = donut => {
   export const fetchDonut = (donutId) => async dispatch => {
 
     let res = await csrfFetch(`/api/donuts/${donutId}`);
-
     if (res.ok) {
-        let data = await res.json();
-        dispatch(receiveDonut(donutId));
+      let data = await res.json();
+      debugger
+        dispatch(receiveDonut(data.donut));
         return data; //why though
     }
   }
@@ -60,6 +61,7 @@ const DonutReducer = (state = {}, action) => {
   
     switch (action.type) {
       case RECEIVE_DONUT:
+        debugger
         nextState[action.donut.id] = action.donut;
         return nextState;
       case RECEIVE_DONUTS:

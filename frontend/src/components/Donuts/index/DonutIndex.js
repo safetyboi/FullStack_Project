@@ -14,7 +14,7 @@ export const DonutIndex = (props) => {
   
     useEffect(() => {
       dispatch(fetchAllDonuts())
-    }, [dispatch]);
+    }, []);
     return(
       <>
         <div className="search-by-type"></div>
