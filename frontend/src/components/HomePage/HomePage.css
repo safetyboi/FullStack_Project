@@ -27,9 +27,12 @@
 .index-navlink-button {
     /* font-weight: 200; */
     font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: #006990;
-    color: #A3F3FF;
+    /* color: #A3F3FF; */
+    color: rgb(221, 236, 250);
     border-radius: 25px;
     padding: 12px;
     padding-left: 16px;

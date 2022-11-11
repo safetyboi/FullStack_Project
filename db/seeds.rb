@@ -68,7 +68,7 @@ require 'open-uri'
     price: 6.00,
     description: 'A fresh brioche ring is glazed thickly with rich, delicious dark chocolate made from scratch with 100% natural cocoa powder. Sweet, gooey, and topped with chopped salted Marcona almonds, this makes for a truly decadent chocolate lover’s combination!'
   })
-  donut5.photos.attach([{io: URI.open('https://foobar-donuts-dev.s3.us-west-2.amazonaws.com/chocolate-bergamot-old-fashioned-removebg-preview.png'), filename:'5-1'},{io: URI.open('https://foobar-donuts-dev.s3.us-west-2.amazonaws.com/chocolate-almond-ganache.webp'), filename:'5-2'}])
+  donut5.photos.attach([{io: URI.open('https://foobar-donuts-dev.s3.us-west-2.amazonaws.com/chocolate-almond-ganache-removebg-preview.png'), filename:'5-1'},{io: URI.open('https://foobar-donuts-dev.s3.us-west-2.amazonaws.com/chocolate-almond-ganache.webp'), filename:'5-2'}])
   # donut6 = Donut.create!({
   #   name: 'Blueberry Bourbon Basil',
   #   donut_type: 'vegan',

@@ -6,6 +6,7 @@ import { DonutIndex } from "./components/Donuts/index/DonutIndex";
 import { DonutShow } from  "./components/Donuts/show/DonutShow";
 import { HomePage } from "./components/HomePage/HomePage";
 import { CartItemIndex } from "./components/CartItems/CartItemIndex";
+import { CheckOut } from "./components/CheckOut";
 import { BackDrop } from "./components/CartItems/BackDrop";
 import { useState } from "react";
 
@@ -30,7 +31,7 @@ function App() {
     <>
      
      <Navigation toggle={drawerToggleClickHandler}/>
-     <CartItemIndex show={drawerOpen}/>
+     <CartItemIndex show={drawerOpen} toggle={drawerToggleClickHandler}/>
      {backdrop}
      <Switch>
       <Route exact path="/">
@@ -47,6 +48,9 @@ function App() {
       </Route>
       <Route exact path="/donuts/:id" >
         <DonutShow toggle={drawerToggleClickHandler} />
+      </Route >
+      <Route exact path="/checkout">
+        <CheckOut />
       </Route>
      </Switch>
     </>

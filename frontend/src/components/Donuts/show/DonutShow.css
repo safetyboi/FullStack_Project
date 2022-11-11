@@ -48,4 +48,20 @@
 
 .add-to-cart:hover {
     cursor: pointer;
+    background-color: #02455e;
 }   
+
+.back-to-donuts {
+    border-radius: 30px;
+    border: none;
+    background-color: #006990;
+    padding: 15px;
+    color: #A3F3FF;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.back-to-donuts:hover {
+    cursor: pointer;
+    background-color: #02455e;
+}

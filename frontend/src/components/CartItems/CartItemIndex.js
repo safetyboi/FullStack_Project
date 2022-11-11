@@ -2,9 +2,10 @@ import { useEffect } from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import * as CartItemActions from '../../store/cartItemReducer'
 import { CartItem } from './CartItem'
+import { NavLink } from 'react-router-dom';
 import "./CartItemIndex.css"
 
-export const CartItemIndex = ({show}) => {
+export const CartItemIndex = ({show, toggle}) => {
     const cartItems = useSelector(state => Object.values(state.cartItems));
     const dispatch = useDispatch();
 
@@ -41,7 +42,11 @@ export const CartItemIndex = ({show}) => {
             <div className="sub-total-container">
             <div className="sub-total">Subtotal: ${subTotal()}.00</div>
             </div>
-            <button className="check-out">Check out</button>
+            {/* <button className="check-out">Check out */}
+                    <NavLink to="/checkout">
+                        <button className="check-out" onClick={toggle}>Check out</button>
+                    </NavLink>
+            {/* </button> */}
         </div>
         </>
     ) : null;

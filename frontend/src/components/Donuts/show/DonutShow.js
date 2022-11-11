@@ -25,14 +25,12 @@ export const DonutShow = ({toggle}) => {
       const handleSubmit = (e) => {
         // debugger
         e.preventDefault();
-        // console.log(cart_item)
         // debugger
 
           const res = dispatch(postCartItem(cart_item)) //what are we passing this function? 
           toggle()
       }
 
-    //   if (!donut) return null;
       return donut ? (
         
         <>

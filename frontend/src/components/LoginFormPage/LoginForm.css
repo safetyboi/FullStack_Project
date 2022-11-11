@@ -6,7 +6,8 @@
 }
 
 .login-form {
-    /* background-color: #a6d2e2; */
+    background-color: aliceblue;
+    border-radius: 20px;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -39,6 +40,7 @@
 .form-title {
     display: flex;
     justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 34px;
     margin: 40px;
     /* margin-left: 100px; */

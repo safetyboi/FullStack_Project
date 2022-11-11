@@ -1,6 +1,7 @@
 .wrapping-top-bar {
     display: flex;
     justify-content: space-between;
+    margin-bottom: .4%;
 }
 
 .logo {

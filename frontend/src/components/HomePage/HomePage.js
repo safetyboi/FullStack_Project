@@ -12,7 +12,7 @@ export const HomePage = () => {
         // <video autoPlay loop id="video" src={SplashVideo} /> */}
         <div className="button-container-vertical">
         <div className="button-container-horizontal">
-            <NavLink exact to="/donuts" className="index-navlink-button" style={{ textDecoration: 'none' }}>View Our Donuts</NavLink>
+            <NavLink exact to="/donuts" className="index-navlink-button" style={{ textDecoration: 'none' }}>See Our Donuts</NavLink>
         </div>
         </div>
         </div>
