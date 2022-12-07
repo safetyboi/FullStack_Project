@@ -3,9 +3,11 @@ import { useEffect } from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import { fetchDonut } from '../../../store/donutReducer'; 
 import { NavLink } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { postCartItem } from "../../../store/cartItemReducer";
 import OrxataGlaze from "./Orxata-Glaze.webp"
+import { Link } from "react-router-dom";
+
 
 export const DonutShow = ({toggle}) => {
     // console.log(props);
@@ -40,8 +42,11 @@ export const DonutShow = ({toggle}) => {
                 <div className="donut-words">
                     <div className="big-title">{donut.name}</div>
                     <div>{donut.description}</div>
-                <div className="button-container">
-                    <button className="add-to-cart" onClick={handleSubmit}>Add to Cart</button>
+                <div className="back-and-addtocart-container">
+                  <div className="back-container">
+                    <Link to="/donuts" className="back-button">&#8617;</Link>
+                  </div>
+                  <button className="add-to-cart" onClick={handleSubmit}>Add to Cart</button>
                 </div>
                 </div>
             </div>
