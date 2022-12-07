@@ -36,10 +36,14 @@
 
 .add-to-cart {
     margin: 15%;
+    margin-left: 5%;
+    margin-right: 5%;
     border-radius: 30px;
     border: none;
     background-color: #006990;
     padding: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
     color: #A3F3FF;
     font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
@@ -64,4 +68,22 @@
 .back-to-donuts:hover {
     cursor: pointer;
     background-color: #02455e;
+}
+
+
+.back-and-addtocart-container {
+    display: flex;
+    flex-direction: row;
+}
+.back-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.back-button {
+    color:#02455e;
+    font-weight: bolder;
+    font-size: 25px;
+    text-decoration: none;
 }

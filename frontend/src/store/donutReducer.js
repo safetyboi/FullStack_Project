@@ -52,6 +52,15 @@ export const receiveDonut = donut => {
     }
   }
 
+  //ultimately, we should probably be passing in the donutType as an arg, so we don't have to write 4 versions of this thunk:
+  export const loadDonuts = donutType => state => {
+    return state.donuts ? Object.values(state.donuts).filter(donut => donut.donutType === donutType) : null
+  }
+
+//   export const loadDonuts = state => {
+//   return state.donuts ? Object.values(state.donuts).filter(donut => donut.donutType === "brioche") : null
+// }
+
 
 //reducer:
 

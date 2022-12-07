@@ -1,6 +1,7 @@
 {
   "name": "full_stack_project",
   "version": "1.0.0",
+  "main": "index.js",
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "directories": {
     "lib": "lib"

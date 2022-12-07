@@ -58,3 +58,22 @@
     font-family: Arial, Helvetica, sans-serif;
     color: #01435b;
 }
+
+.sort-button {
+    margin: 15%;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 30px;
+    border: none;
+    background-color: #006990;
+    padding: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    color: #A3F3FF;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.sort-button:hover {
+    cursor: pointer;
+}
