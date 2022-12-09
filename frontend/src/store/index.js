@@ -2,13 +2,15 @@ import {legacy_createStore, combineReducers, applyMiddleware, compose} from 'red
 import thunk from 'redux-thunk';
 import CartItemReducer from './cartItemReducer';
 import DonutReducer from './donutReducer';
+import ReviewsReducer from './reviewReducer';
 import SessionReducer from './session';
 
 
 export const rootReducer = combineReducers({
   session: SessionReducer,//{user: {}}
   donuts: DonutReducer,
-  cartItems: CartItemReducer
+  cartItems: CartItemReducer,
+  reviews: ReviewsReducer
 })
 
 let enhancer;

@@ -1,20 +1,32 @@
 import "./DonutShow.css"
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import { fetchDonut } from '../../../store/donutReducer'; 
 import { NavLink } from 'react-router-dom';
 import { useParams, useHistory } from 'react-router-dom';
 import { postCartItem } from "../../../store/cartItemReducer";
-import OrxataGlaze from "./Orxata-Glaze.webp"
 import { Link } from "react-router-dom";
+import { Modal } from "../../Modal"; 
+import Review from "../../Reviews/review";
+import { getReviews } from "../../../store/reviewReducer";
+import ReviewModal from "../../Reviews/ReviewModal";
+
 
 
 export const DonutShow = ({toggle}) => {
     // console.log(props);
     const {id} = useParams();
     const donut = useSelector(state => state.donuts[id]); 
+    const reviews = useSelector(getReviews);
+    const ratings = reviews.map(review => review?.rating);
     const dispatch = useDispatch();
-// debugger
+
+  //test - these all technically belong at the Review component level
+    const [showModal, setShowModal] = useState(false);
+    const [formType, setFormType] = useState('Create Review');
+    // let existingReview = reviews.find(review => review?.userId === user?.id);
+  //test
+
   let cart_item;
     if (donut) {
        cart_item = {donut_id: donut.id, donut_name: donut.name, donut_price: donut.price, quantity: 1} 
@@ -33,9 +45,31 @@ export const DonutShow = ({toggle}) => {
           toggle()
       }
 
+      const reviewAvg = () => {
+        if (reviews?.length) {
+          return (ratings.reduce((a, b) => a + b) / reviews?.length).toFixed(1);
+        } else {
+          return 0.0;
+        }
+      }
+      
+      const reviewStars = () => {
+        const roundedRating = Math.round(reviewAvg());
+        const stars = [];
+        for (let i = 0; i < roundedRating; i++) {
+          stars.push(<i class="fa-solid fa-star"></i>)
+        }
+        return stars;
+      }
+
+      const goToReview = () => {
+        if (reviews) {
+          document.querySelector('.review_wrapper').scrollIntoView({behavior: "smooth"});
+        }
+      }
+
       return donut ? (
         
-        <>
         <div className="donut-show">
             <div className="donut-show-container">
                 <div className="words-and-button">
@@ -51,13 +85,21 @@ export const DonutShow = ({toggle}) => {
                 </div>
             </div>
             <div className="donut-image-container">
-            <div>
-                {/* <img className="donut-image" src={OrxataGlaze}></img> */}
+              <div>
                 <img className="donut-image" src={donut.imageURL[1]}></img>
-            </div>
-            </div>
+              </div>
+              <div className="product_details_wrapper">
+                <div className="review_stars flex-row"
+                  onClick={goToReview}>
+                  {reviewStars()}
+                  <p>{reviews?.length} {reviews?.length === 1 ? 'review' : 'reviews'}</p>
+                </div>
+              </div>
             </div> 
-        </div> 
-        </>
+          </div>
+          <Review />
+          <ReviewModal setShowModal={setShowModal} formType={formType} />
+        </div>
+      
       ) : null;
 }

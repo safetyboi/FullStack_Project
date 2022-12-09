@@ -1,1 +1,130 @@
 /* TODO Add site wide styles */
+
+
+.text-center {
+    text-align: center;
+  }
+  
+  .fa-circle {
+    font-size: 25%;
+  }
+  
+  .fa-star {
+    color: #FECE31;
+  }
+  
+  
+  /* Display CSS */
+  .flex-row {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .flex-col {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .align-start {
+    align-items: flex-start;
+  }
+  
+  .align-center{
+    align-items: center;
+  }
+  
+  .align-end{
+    align-items: flex-end;
+  }
+  
+  .justify-start {
+    justify-content: flex-start;
+  }
+  
+  .justify-center{
+    justify-content: center;
+  }
+  
+  .justify-end{
+    justify-content: flex-end;
+  }
+  
+  .justify-between{
+    justify-content: space-between;
+  }
+  
+  .justify-around{
+    justify-content: space-around;
+  }
+  
+  .justify-evenly{
+    justify-content: space-evenly;
+  }
+  
+  .grid {
+    display: grid;
+  }
+  
+  .block {
+    display: block;
+  }
+  
+  
+  /* Button CSS*/
+  .btn {
+    cursor: pointer;
+    border: none;
+    background-color: white;
+    font-family: var(--body-font);
+    font-size: 1.1vw;
+    font-weight: 600;
+    padding: 3vh 2vw;
+    border-radius: var(--border-radius);
+    color: var(--grey-text);
+    transition: 1s
+  }
+  
+  .btn:hover {
+    background-color: rgba(128, 128, 128, .3);
+    color: white;
+  }
+  
+  .account_button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .modal_button {
+    background-color: var(--black-text);
+    padding: 2vh;
+    margin-top: 5%;
+    border-radius: var(--border-radius);
+    color: white;
+    font-weight: 600;
+    font-size: 1.2vw;
+    border: none;
+    cursor: pointer;
+  }
+  
+  
+  /* Picture CSS */
+  .pic_container img {
+    max-width: 100%;
+    border-radius: var(--border-radius);
+    border: .5vw rgba(255, 255, 255, .5) solid;
+  }
+  
+  
+  /* Page CSS */
+  .page_wrapper {
+    position: absolute;
+    background-image: var(--background-img);
+    top: 0;
+    right: 0;
+    width: 100vw;
+    z-index: -1;
+    background-repeat: round;
+    background-size: cover;
+  }

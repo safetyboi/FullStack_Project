@@ -92,7 +92,7 @@ export const updateCartItem = (item) => async dispatch => {
 
 export const deleteCartItem = (id) => async dispatch => {
   // debugger
-    let res = csrfFetch(`api/cart_items/${id}`, {
+    let res = csrfFetch(`/api/cart_items/${id}`, {
         method: 'DELETE'
     });
 
@@ -113,7 +113,7 @@ const CartItemReducer = (state = {}, action) => {
         nextState[action.cart_item.id] = action.cart_item;
         return nextState;
         case REMOVE_CART_ITEM:
-          debugger
+          // debugger
           delete nextState[action.cart_item_Id]; //what does TeaTime have access to, and why?
           return nextState;
         default: 

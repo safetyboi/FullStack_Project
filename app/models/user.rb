@@ -20,6 +20,8 @@ class User < ApplicationRecord
 
   before_validation :ensure_session_token
 
+  has_many :reviews
+
   validates :username, 
     uniqueness: true, 
     length: { in: 3..30 }, 
