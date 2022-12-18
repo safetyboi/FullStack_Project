@@ -2,13 +2,36 @@
     color:black; 
 }
 
+/* CSS variables */
+:root {
+    --horizontal-edge: 3vw;
+    --vertical-edge: 8vh;
+    --grey-text: #808080;
+    --black-text: #1a1a1a;
+    --body-font: 'Poppins', sans-serif;
+    --purple: #8C9DCC;
+    --reels-font: 'Pacifico', cursive;
+    --border-radius: 2vw;
+    --background-img: url(https://cdn.shopify.com/s/files/1/0146/8461/8806/files/updated-desktop_269ef8ee-21b1-43fd-80fc-44d989bacec6_2000x.jpg);
+    overflow-x: hidden;
+  }
+  
+  /* Universal styling */
+  #root {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25vw;
+    line-height: 1.3;
+    color: var(--black-text);
+  }
 
-
-
+/* .blue-background {
+  background-color: #a6d2e2;
+} */
 
 
 .review_wrapper h1 {
     color: white;
+    /* color:black; */
     font-weight: 600;
     font-size: 2.5vw;
     margin-bottom: 5vh;
@@ -223,3 +246,11 @@
     padding: .5vw;
     border-radius: .5vw;
   }
+
+  /* .review_item_wrapper {
+    background-color: #a6d2e2;
+  } */
+
+  /* .review-items {
+    background-color: #a6d2e2;
+  } */

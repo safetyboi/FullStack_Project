@@ -9,7 +9,7 @@ class Api::CartItemsController < ApplicationController
             render :show
         else 
             @cart_item = CartItem.new(cart_item_params) 
-            debugger
+            # debugger
             if @cart_item.save
             # debugger
             render :show

@@ -1,0 +1,73 @@
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .5);
+  }
+  
+  .modal_background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    animation: hidden .2s linear;
+    /* background-image: url(https://cdn.shopify.com/s/files/1/0146/8461/8806/files/updated-desktop_269ef8ee-21b1-43fd-80fc-44d989bacec6_2000x.jpg); */
+    opacity: 0.7;
+  }
+  
+  .modal_background:hover {
+    cursor: pointer;
+  }
+  
+  .modal_content {
+    position: absolute;
+    background-color:white;
+    padding: 2%;
+    border-radius: var(--border-radius);
+    height: 80vh;
+    overflow-y: auto;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    transform: translateY(0%);
+    animation: in .2s ease-in-out;
+  }
+  
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .modal_content::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .hide-modal {
+    transform: translateY(-10%);
+    overflow: hidden;
+  }
+  
+  @keyframes hidden {
+    0% {
+          opacity:0;
+      }
+      50% {
+          opacity:.35;
+      }
+    100% {
+      opacity: .7;
+    }
+  }
+  
+  @keyframes in {
+    0% {
+      transform: translateY(-100%);
+      }
+      50% {
+      transform: translateY(-50%);
+      }
+    100% {
+      transform: translateY(0%);
+    }
+  }

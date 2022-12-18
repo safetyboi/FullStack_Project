@@ -32,9 +32,10 @@ export const getReviews = state => {
 
 // THUNK
 export const fetchReviews = donutId => async dispatch => { //remember: you're passing this a donut's id, likely as donut.id
-    const res = await csrfFetch(`/api/products/${donutId}/reviews`);
+    const res = await csrfFetch(`/api/donuts/${donutId}/reviews`); //
     const reviews = await res.json();
     dispatch(receiveReviews(reviews));
+    return reviews;
     }
     
     export const fetchReview = reviewId => async dispatch => { //remember: you're passing this a review id, likely as review.id
@@ -44,7 +45,6 @@ export const fetchReviews = donutId => async dispatch => { //remember: you're pa
     }
     
     export const createReview = currentReview => async dispatch => {
-      debugger
     const res = await csrfFetch(`/api/reviews`, {
       method: 'POST',
       headers: {
@@ -58,7 +58,9 @@ export const fetchReviews = donutId => async dispatch => { //remember: you're pa
         debugger
         const newReview = await res.json();
         debugger
-        dispatch(receiveReview(newReview));
+        dispatch(receiveReview(newReview)); //do I need a return after this line?
+      } else {
+        console.log('errors', res.errors)
       }
     }
     
@@ -74,7 +76,9 @@ export const fetchReviews = donutId => async dispatch => { //remember: you're pa
     
       if (res.ok) {
         const updatedReview = await res.json();
-        dispatch(receiveReview(updatedReview));
+        dispatch(receiveReview(updatedReview)); //do I need a return after this line?
+      } else {
+        console.log('errors', res.errors)
       }
     }
     

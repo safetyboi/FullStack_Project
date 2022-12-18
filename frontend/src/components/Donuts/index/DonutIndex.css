@@ -58,18 +58,29 @@
     font-family: Arial, Helvetica, sans-serif;
     color: #01435b;
 }
+.search-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #a6d2e2;
+}
+.search-by-type {
+    margin-left: 10%;
+    width: 60%;
+    background-color: #a6d2e2;
+}
 
 .sort-button {
-    margin: 15%;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin: 1%;
+    margin-left: 2%;
+    margin-right: 2%;
     border-radius: 30px;
     border: none;
     background-color: #006990;
     padding: 15px;
     padding-left: 25px;
     padding-right: 25px;
-    color: #A3F3FF;
+    color: white;
     font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
 }

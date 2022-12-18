@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 import { useParams, useHistory } from 'react-router-dom';
 import { postCartItem } from "../../../store/cartItemReducer";
 import { Link } from "react-router-dom";
-import { Modal } from "../../Modal"; 
+import { Modal } from "../../Reviews/Modal"; 
 import Review from "../../Reviews/review";
 import { getReviews } from "../../../store/reviewReducer";
 import ReviewModal from "../../Reviews/ReviewModal";
@@ -22,8 +22,8 @@ export const DonutShow = ({toggle}) => {
     const dispatch = useDispatch();
 
   //test - these all technically belong at the Review component level
-    const [showModal, setShowModal] = useState(false);
-    const [formType, setFormType] = useState('Create Review');
+    // const [showModal, setShowModal] = useState(false);
+    // const [formType, setFormType] = useState('Create Review');
     // let existingReview = reviews.find(review => review?.userId === user?.id);
   //test
 
@@ -88,18 +88,20 @@ export const DonutShow = ({toggle}) => {
               <div>
                 <img className="donut-image" src={donut.imageURL[1]}></img>
               </div>
-              <div className="product_details_wrapper">
+              
+            </div> 
+          </div>
+          <Review />
+        </div>
+      
+      ) : null;
+}
+
+
+{/* <div className="product_details_wrapper">
                 <div className="review_stars flex-row"
                   onClick={goToReview}>
                   {reviewStars()}
                   <p>{reviews?.length} {reviews?.length === 1 ? 'review' : 'reviews'}</p>
                 </div>
-              </div>
-            </div> 
-          </div>
-          <Review />
-          <ReviewModal setShowModal={setShowModal} formType={formType} />
-        </div>
-      
-      ) : null;
-}
+              </div> */}

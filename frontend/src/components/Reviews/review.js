@@ -2,25 +2,28 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, NavLink } from "react-router-dom";
 import { fetchReviews, fetchReview, getReviews, deleteReview} from "../../store/reviewReducer";
-import { Modal } from "../Modal";
+import { Modal } from "./Modal";
 import ReviewModal from "./ReviewModal";
 import ReviewListing from "./ReviewListing";
 import "./review.css"
 
 const Review = () => {
   const dispatch = useDispatch();
-  const {donutId} = useParams(); //is this how it's actually coming in the params?
+  const {id} = useParams(); //is this how it's actually coming in the params?
   const user = useSelector(state => state.session.user);
   const reviews = useSelector(getReviews);
   const ratings = reviews.map(review => review.rating);
   const [showModal, setShowModal] = useState(false);
   const [formType, setFormType] = useState('Create Review');
-  
+
   useEffect(() => {
-    dispatch(fetchReviews(donutId));
-  }, [dispatch, donutId]);
+    dispatch(fetchReviews(id));
+  }, [dispatch, id]);
   
-  let existingReview = reviews.find(review => review?.userId === user?.id);
+  let existingReview;
+  if (reviews.length) {
+      existingReview = reviews.find(review => review?.usersId === user?.id); 
+  } 
   
   const reviewAvg = () => {
     if (reviews) {
@@ -46,7 +49,7 @@ const Review = () => {
           <button 
             className="review_button"
             onClick={() => {
-              dispatch(fetchReview(existingReview.id));
+              dispatch(fetchReview(existingReview.id)); //this line is doing nothing as far as I can tell
               setShowModal(true);
               setFormType('Update Review');
             }}>
@@ -67,7 +70,7 @@ const Review = () => {
     
     return (
       <button 
-        // className="review_button"
+        className="review_button"
         onClick={() => setShowModal(true)}>
         Write a review
       </button>
@@ -78,7 +81,7 @@ const Review = () => {
     if (reviews?.length === 0) {
       return (
         <div className="review_items empty flex-col align-center">
-          <p>There are no reviews yet..</p>
+          <p>There are no reviews yet...</p>
           <button 
             className="review_button"
             onClick={() => setShowModal(true)}>
@@ -103,11 +106,12 @@ const Review = () => {
       )
     }
   }
-
+// debugger
   return (
     <>
+    <div className="blue-background">
       <section className="review_wrapper flex-col align-center">
-        <h1>Reviews</h1>
+        {/* <h1>Reviews</h1>  */}
         {reviewIndex()}        
         <div className="review_item_wrapper">
           {reviews ? reviews.map(review => (
@@ -121,7 +125,7 @@ const Review = () => {
       {showModal && (
         <div className="review_modal_wrapper">
           <Modal onClose={() => setShowModal(false)}>
-            <ReviewModal setShowModal={setShowModal} formType={formType} existingReview={existingReview} />
+            {/* <ReviewModal setShowModal={setShowModal} formType={formType} existingReview={existingReview} /> */}
             {user ? <ReviewModal setShowModal={setShowModal} formType={formType} existingReview={existingReview} /> : (
               <div className="review_modal_login flex-col">
                 <h1>Oops, you're not logged in</h1>
@@ -133,6 +137,7 @@ const Review = () => {
           </Modal>
         </div>
       )}
+    </div>
     </>
   )
 }

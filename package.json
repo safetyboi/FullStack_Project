@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/safetyboi/FullStack_Project/issues"
   },
-  "homepage": "https://github.com/safetyboi/FullStack_Project#readme"
+  "homepage": "https://github.com/safetyboi/FullStack_Project#readme",
+  "dependencies": {
+    "react-dom": "^18.2.0"
+  }
 }

@@ -1,20 +1,23 @@
 class Api::ReviewsController < ApplicationController
 
     def create
-      debugger
         @review = Review.new(review_params)
-      debugger
         if @review.save
-          debugger
           render :show
         else
-          render json: {errors: @review.errors.full_messages}, status: :uprocessable_entity
+          render json: {errors: @review.errors.full_messages}
+          # render json: {errors: @review.errors.full_messages}, status: :uprocessable_entity
         end
       end
     
       def index
         @reviews = Review.where(donut_id: params[:donut_id])
         render :index
+      end
+
+      def show
+        @review = Review.find_by(id: params[:id])
+        render :show
       end
     
       def update

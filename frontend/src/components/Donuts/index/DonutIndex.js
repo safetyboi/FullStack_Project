@@ -58,16 +58,18 @@ export const DonutIndex = (props) => {
     }    
     return filteredDonuts ? (
       <>
+      <div className='search-container'>
         <div className="search-by-type">
           <button className="sort-button" onClick={filterAll}>All</button>
           <button className="sort-button" onClick={filterBrioche}>Brioche</button>
           <button className="sort-button" onClick={filterOldFashioned}>Old-Fashioned</button>
           <button className="sort-button" onClick={filterVegan}>Vegan</button>
         </div>
+      </div>
         <div className='donut-index-container'>
           <MapDonuts key={donuts} donuts={donuts} filteredDonuts={filteredDonuts}/>
-          </div>
-        
+        </div>
+      
         
       </>
     ) : (
