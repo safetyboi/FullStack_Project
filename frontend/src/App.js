@@ -8,6 +8,7 @@ import { HomePage } from "./components/HomePage/HomePage";
 import { CartItemIndex } from "./components/CartItems/CartItemIndex";
 import { CheckOut } from "./components/CheckOut";
 import { BackDrop } from "./components/CartItems/BackDrop";
+import { Footer } from "./components/Footer/Footer";
 import { useState } from "react";
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
         <CheckOut />
       </Route>
      </Switch>
+     {/* <Footer></Footer> */}
     </>
    
 

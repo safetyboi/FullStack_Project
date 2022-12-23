@@ -8,7 +8,8 @@ import { useDispatch } from 'react-redux';
 import logo from './foobar_donuts.jpg';
 import login from './login.png';
 import cart from './cart.png';
-import cart_hover from './cart-hover.png'
+import cart_hover from './cart-hover.png';
+import { Footer } from '../Footer/Footer';
 
 
 export const Navigation = ({toggle}) => {
@@ -37,9 +38,9 @@ export const Navigation = ({toggle}) => {
 
   return (
     <>
-    
     <div className="wrapping-top-bar">
-      <div></div>
+      {/* <div></div> */}
+      <Footer />
       <div className="center-home-button">
         <NavLink exact to="/">
         <img src={logo} className="logo"></img>
