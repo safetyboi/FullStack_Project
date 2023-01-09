@@ -62,7 +62,7 @@ export const postCartItem = (donut) => async dispatch => { //I think this one ma
           'Accept': 'application/json'
       }
     })
-    console.log(res)
+    // console.log(res)
     
   if (res.ok) {
     // debugger
@@ -95,7 +95,7 @@ export const deleteCartItem = (id) => async dispatch => {
     let res = csrfFetch(`/api/cart_items/${id}`, {
         method: 'DELETE'
     });
-
+    // debugger
     dispatch(removeCartItem(id))
 }
 

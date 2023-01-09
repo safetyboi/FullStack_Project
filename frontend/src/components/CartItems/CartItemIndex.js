@@ -2,12 +2,13 @@ import { useEffect } from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import * as CartItemActions from '../../store/cartItemReducer'
 import { CartItem } from './CartItem'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import "./CartItemIndex.css"
 
 export const CartItemIndex = ({show, toggle}) => {
     const cartItems = useSelector(state => Object.values(state.cartItems));
     const dispatch = useDispatch();
+    let history = useHistory();
 
     useEffect(() => {
         dispatch(CartItemActions.fetchAllCartItems())
@@ -24,6 +25,18 @@ export const CartItemIndex = ({show, toggle}) => {
             sum += (item.quantity * item.donutPrice)
         })
         return sum;
+    }
+
+    const emptyCart = (e) => {
+        //logic for emptying cart
+        e.preventDefault();
+        // debugger
+        cartItems.forEach(item => {
+            dispatch(CartItemActions.deleteCartItem(item.id)) //can I key into item like this?
+        })
+        // debugger
+        toggle();
+        history.push("/checkout")
     }
 
     return cartItems ? (
@@ -44,7 +57,7 @@ export const CartItemIndex = ({show, toggle}) => {
             </div>
             {/* <button className="check-out">Check out */}
                     <NavLink to="/checkout">
-                        <button className="check-out" onClick={toggle}>Check out</button>
+                        <button className="check-out" onClick={emptyCart}>Check out</button>
                     </NavLink>
             {/* </button> */}
         </div>
